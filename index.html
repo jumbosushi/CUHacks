@@ -1,52 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>418 Brew it</title>
-    <link rel="manifest" href="./manifest.json">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Hello, World! - A-Frame">
-    <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
-    <script src="js/shootingLogic.js"></script>
-  </head>
-  <body>
-    <a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
+<head>
+  <meta charset="utf-8">
+  <title>Brewbrew</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Web VR shooting game">
+  <link rel="manifest" href="./manifest.json">
+  <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+  <script src="js/shootingLogic.js"></script>
+</head>
 
-     <a-sound src="audio/boss.mp3" autoplay="true" position="0 2 5"></a-sound>
-
+<body>
+  <a-scene inspector="url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js">
     <a-assets>
-      <img id ="kitchen" src="img/kitchen-4.jpg"/>
-      <img id ="sandwich" src="img/sandwich.png"/>
+      <img id="kitchen" src="img/kitchen-4.jpg" />
+      <img id="sandwich" src="img/sandwich.png" />
     </a-assets>
 
-      <!-- Environment -->
-      <a-camera>
+    <a-camera>
+      <a-cursor color="#FF0000"></a-cursor>
+    </a-camera>
 
-        <a-cursor color="#FF0000">
-        </a-cursor>
-      </a-camera>
-      <a-sky src="#kitchen"></a-sky>
-<a-entity page-change-memory>
+      <!-- Environment -->
+    <a-sound src="audio/boss.mp3" autoplay="true" position="0 2 5"></a-sound>
+    <a-sky src="#kitchen"></a-sky>
+
+    <a-entity page-change-memory>
       <a-box class="memory" color="#456d41" position=".5 1.2 -7" rotation="0 0 0" scale="10 3 0.1"></a-box>
-      <a-text  color="#000000" position="-1 1.5 -6" rotation="0 0 0" scale="3 3 0.1" value="Welcome!"></a-text>
-      <a-text  color="#000000" position="-3 1 -6" rotation="0 0 0" scale="3 3 0.1" value="Memory Game"></a-text>
-</a-entity>
-<a-entity page-change-spell>
+      <a-text color="#000000" position="-1 1.5 -6" rotation="0 0 0" scale="3 3 0.1" value="Welcome!"></a-text>
+      <a-text color="#000000" position="-3 1 -6" rotation="0 0 0" scale="3 3 0.1" value="Memory Game"></a-text>
+    </a-entity>
+
+    <a-entity page-change-spell>
       <a-box class="spell" color="#456d41" position="4 1.3 -3" rotation="0 -30 0" scale="2 2 0.1">
-       
       </a-box>
-      <a-text  color="#000000" position="3.15 1.3 -3.38" rotation="0 -50 0" scale="1.8 2 2" value="Spelling"></a-text>
-</a-entity>
-<a-entity page-change-attack>
+      <a-text color="#000000" position="3.15 1.3 -3.38" rotation="0 -50 0" scale="1.8 2 2" value="Spelling"></a-text>
+    </a-entity>
+
+    <a-entity page-change-attack>
       <a-box class="attack" color="#456d41" position="-3.8 1.3 -3" rotation="0 -320 0" scale="2 2 0.1">
         <a-event name="page-change"></a-event>
       </a-box>
-      <a-text  color="#000000" position="-3.83 1.3 -2.19" rotation="0 -320 0" scale="1.8 2 2" value="Attack"></a-text>
-</a-entity>
-    </a-scene>
-  </body>
+      <a-text color="#000000" position="-3.83 1.3 -2.19" rotation="0 -320 0" scale="1.8 2 2" value="Attack"></a-text>
+    </a-entity>
+  </a-scene>
+</body>
 </html>
-
-<script>
-  
-</script>
