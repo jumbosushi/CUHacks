@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    meta charset="utf-8"
+    title Brewbrew
+    meta content="width=device-width, initial-scale=1" name="viewport"
+    link href="../manifest.json" rel="manifest"
+    script src="https://unpkg.com/babel-standalone@6/babel.min.js" 
+    meta content=("Web VR shooting game") name="description"
+    script src="https://aframe.io/releases/0.5.0/aframe.min.js" 
+  body
+    a-scene inspector=("url: https://aframe.io/releases/0.3.0/aframe-inspector.min.js") 
+      a-assets
+        img#kitchen src="../assets/img/kitchen-4.jpg"
+        img#sandwich src="../assets/img/sandwich.png"
+        audio#shoot preload="auto" src="../assets/audio/hwychew.mp3"
+        audio#die preload="auto" src="../assets/audio/kch.mp3"
+        audio#background preload="auto" src="../assets/boss.mp3"
+      a-camera
+        a-cursor color="#FF0000" 
+          /! Score counter
+          a-text#scoreKeeper color="#bd1b1b" position=("-0.10 -0.05 0") scale=("0.3 0.3 0.3") scorekeeper="" value="SCORE" 
+      a-sound autoplay="true" src="#background"
+      a-sky src="#kitchen" 
+      a-entity#new
+      
+    script src="../assets/js/serviceWorkerCheck.js" 
+    script src="../assets/js/shootingLogic.js" 
+    script src="../assets/js/sandwich-component.js" 

@@ -1,9 +1,5 @@
 source "http://rubygems.org/"
 
-gem "sinatra" 
-gem "slim"
-gem "rerun"
-
-group :test do
-    gem 'rspec'
-end
+gem "sinatra", "~>1.4.8"
+gem "slim", "~>3.0.7"
+gem "rerun", "~>0.11.0"
